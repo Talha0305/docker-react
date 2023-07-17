@@ -6,4 +6,4 @@ before_install:
   - docker build -t Talha/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true Talha/docker-react npm run test -- --coverage
+  - docker run Talha/docker-react npm run test -- --coverage
