@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run Talha/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-2"
+  app: "React App"
+  env: "ReactApp-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-2-966139103938"
+  bucket_path: "React App"
+  on:
+    branch: master
+  access_key_id : $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
