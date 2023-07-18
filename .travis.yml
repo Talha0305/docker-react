@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - sudo docker build -t Talha0305/docker-react -f Dockerfile.dev .
+  - docker build -t talha0305/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run Talha0305/docker-react npm run test -- --coverage
+  - docker run talha0305/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
